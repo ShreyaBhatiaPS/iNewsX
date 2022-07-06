@@ -14,19 +14,14 @@ struct News: Codable {
 }
 
 struct NewsData: Codable {
-    let id, title, description, publishedDate, author, time: String
+    let title, description, publishedDate: String
     let imageUrl, newsUrl: String
-    let readMoreUrl: String?
     
     enum CodingKeys: String, CodingKey {
-        case id = "id"
         case title = "title"
         case description = "content"
         case publishedDate = "date"
-        case author = "author"
         case imageUrl = "imageUrl"
-        case readMoreUrl = "readMoreUrl"
-        case time = "time"
         case newsUrl = "url"
     }
 }

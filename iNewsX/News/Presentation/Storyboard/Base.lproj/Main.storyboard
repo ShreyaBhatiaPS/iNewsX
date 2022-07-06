@@ -21,41 +21,40 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="24" minimumInteritemSpacing="24" id="JYp-qZ-pzA">
-                                    <size key="itemSize" width="380" height="818"/>
+                                    <size key="itemSize" width="396" height="515"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="16" maxX="0.0" maxY="32"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="NewsCollectionViewCell" id="v5h-H4-x2p" customClass="NewsCollectionViewCell" customModule="iNewsX" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="16" width="380" height="818"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="NewsCollectionViewCell" id="v5h-H4-x2p" customClass="NewsCollectionViewCell" customModule="iNewsX" customModuleProvider="target">
+                                        <rect key="frame" x="9" y="16" width="396" height="515"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XT5-au-Gp8">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="818"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="396" height="515"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhD-Gk-Zaj">
-                                                    <rect key="frame" x="16" y="32" width="348" height="30"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <rect key="frame" x="16" y="32" width="364" height="20"/>
+                                                    <fontDescription key="fontDescription" name="Charter-Bold" family="Charter" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jup-Wr-Zwm">
-                                                    <rect key="frame" x="16" y="294" width="348" height="16"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                    <rect key="frame" x="16" y="284" width="364" height="11"/>
+                                                    <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UzJ-tD-xn3">
-                                                    <rect key="frame" x="16" y="78" width="348" height="200"/>
+                                                    <rect key="frame" x="16" y="68" width="364" height="200"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="300" id="Kmn-UK-AwM"/>
                                                         <constraint firstAttribute="height" constant="200" id="gV8-uD-qwR"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhG-mU-eyA">
-                                                    <rect key="frame" x="16" y="326" width="348" height="476"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <rect key="frame" x="16" y="311" width="364" height="188"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -76,7 +75,7 @@
                                                 <constraint firstItem="Jup-Wr-Zwm" firstAttribute="top" secondItem="UzJ-tD-xn3" secondAttribute="bottom" constant="16" id="xUf-Ow-HUn"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="380" height="818"/>
+                                        <size key="customSize" width="396" height="515"/>
                                         <connections>
                                             <outlet property="imageView" destination="UzJ-tD-xn3" id="g4Z-WS-fi3"/>
                                             <outlet property="newsdesc" destination="dhG-mU-eyA" id="MxL-14-24S"/>

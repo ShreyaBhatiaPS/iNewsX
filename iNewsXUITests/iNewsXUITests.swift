@@ -9,25 +9,41 @@ import XCTest
 
 class iNewsXUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    let app = XCUIApplication()
+    
+    override func setUp() {
+        super.setUp()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
+    func testCollectionView() throws {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let newsCollectionView = app.collectionViews.matching(identifier: "NewsCollectionView")
+        
+        let collectionViewCells = newsCollectionView.cells
+        XCTAssert(collectionViewCells.element.waitForExistence(timeout: 5.0))
+        
+        if collectionViewCells.count > 0 {
+            let count: Int = (collectionViewCells.count - 1)
+            
+            let expectation = expectation(description: "Wait for collection view cells")
+            
+            for index in stride(from: 0, to: count, by: 1) {
+                let cell = collectionViewCells.element(boundBy: index)
+                XCTAssertTrue(cell.waitForExistence(timeout: 2.0), "The \(index) cell is present in collection view")
+                
+                if index == (count - 1) {
+                    expectation.fulfill()
+                }
+            }
+            
+            waitForExpectations(timeout: 20, handler: nil)
+            XCTAssertTrue(true, "Collection view validations finished")
+        } else {
+            XCTAssert(false, "Could'nt find collection view cells")
+        }
     }
 
     func testLaunchPerformance() throws {

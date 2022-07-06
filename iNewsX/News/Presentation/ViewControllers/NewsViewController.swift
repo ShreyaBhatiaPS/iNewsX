@@ -15,11 +15,16 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addAccessibilityIdentifier()
         self.fetchNewsData()
     }
 
     private func fetchNewsData() {
         viewModel?.fetchNews()
+    }
+    
+    private func addAccessibilityIdentifier() {
+        newsCollectionView.accessibilityIdentifier = "NewsCollectionView"
     }
 }
 
@@ -34,7 +39,7 @@ extension NewsViewController: NewsViewModelResult {
     }
 }
 
-extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel?.news.count ?? 0
@@ -46,6 +51,10 @@ extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         cell.newsData = viewModel?.news[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width-32, height: 800)
     }
 
 }
@@ -61,12 +70,12 @@ extension NewsViewController: UIScrollViewDelegate {
      }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-            snapToCenter()
-        }
+        snapToCenter()
+    }
 
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-            if !decelerate {
-                snapToCenter()
-            }
+        if !decelerate {
+            snapToCenter()
+        }
     }
 }
