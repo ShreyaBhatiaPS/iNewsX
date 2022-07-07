@@ -10,16 +10,15 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DE2427C72872B5970064A625"
-               BuildableName = "iNewsXUITests.xctest"
-               BlueprintName = "iNewsXUITests"
+               BlueprintIdentifier = "DE2427BD2872B5960064A625"
+               BuildableName = "iNewsXTests.xctest"
+               BlueprintName = "iNewsXTests"
                ReferencedContainer = "container:iNewsX.xcodeproj">
             </BuildableReference>
          </TestableReference>

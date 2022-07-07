@@ -9,11 +9,11 @@ import Foundation
 
 //typealias News = [NewsData]
 
-struct News: Codable {
+struct News: Codable, Equatable {
     var data: [NewsData] = []
 }
 
-struct NewsData: Codable {
+struct NewsData: Codable, Equatable {
     let title, description, publishedDate: String
     let imageUrl, newsUrl: String
     
