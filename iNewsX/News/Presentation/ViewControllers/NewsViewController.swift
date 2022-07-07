@@ -58,24 +58,3 @@ extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 
 }
-
-extension NewsViewController: UIScrollViewDelegate {
-    
-    private func snapToCenter() {
-        let centerPoint = view.convert(view.center, to: newsCollectionView)
-        guard let centerIndexPath = newsCollectionView.indexPathForItem(at: centerPoint) else {
-            return
-        }
-        newsCollectionView.scrollToItem(at: centerIndexPath, at: .centeredVertically, animated: true)
-     }
-
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        snapToCenter()
-    }
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-            snapToCenter()
-        }
-    }
-}

@@ -14,8 +14,8 @@ struct MockData {
                                                          imageUrl: "getimage.com",
                                                          newsUrl: "https://abcnews.com")])
     
-    static func encodeData() -> Data {
-        let encodedData = try! JSONEncoder().encode(newsData)
-        return encodedData
-    }
+//    static func encodeData() -> Data {
+//        let encodedData = try! JSONEncoder().encode(newsData)
+//        return encodedData
+//    }
 }

@@ -11,12 +11,13 @@ import Foundation
 class MockNewsRepository: INewsRepository {
     
     var newsData: News?
+    var error: BaseErrorClass?
     
     func makeNetworkCallToGetNews(completion: NewsCompletionHandler?) {
         if let newsData = newsData {
             completion!(.success(newsData))
-        } else {
-            completion!(.failure(BaseErrorClass(message: "Data not found")))
+        } else if let error = error {
+            completion!(.failure(error))
         }
     }
 }

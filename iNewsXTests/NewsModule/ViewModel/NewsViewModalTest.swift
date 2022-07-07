@@ -10,8 +10,7 @@ import XCTest
 
 class NewsViewModalTest: XCTestCase {
 
-    var resultImplementation: NewsViewModelResult?
-    var news: [NewsData] = []
+    private var expectation: XCTestExpectation!
     var useCase: MockUseCase!
     var newsViewModel: NewsViewModelImpl?
     
@@ -19,38 +18,39 @@ class NewsViewModalTest: XCTestCase {
         super.setUp()
         useCase = MockUseCase()
         newsViewModel = NewsViewModelImpl(useCase: useCase)
+        newsViewModel?.resultImplementation = self
     }
     
     override func tearDown() {
         super.tearDown()
+        useCase = nil
+        newsViewModel = nil
     }
     
     func testViewModelSuccess() {
+        expectation = expectation(description: "Successfully launched the view model")
         useCase.news = MockData.newsData
-        useCase.getTheNews { [weak self] result in
-            switch result {
-            case .success(let model):
-                XCTAssertEqual(model.data, self?.useCase.news?.data)
-                self?.resultImplementation?.success()
-            case .failure(let error):
-                XCTFail(error.message)
-                self?.resultImplementation?.gotError(error)
-            }
-        }
+        newsViewModel?.fetchNews()
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testViewModelFailure() {
-        useCase.news = nil
-        useCase.getTheNews { [weak self] result in
-            switch result {
-            case .success(let model):
-                XCTAssertEqual(model.data, nil)
-                self?.resultImplementation?.success()
-            case .failure(let error):
-                XCTAssert(true)
-                self?.resultImplementation?.gotError(error)
-            }
-        }
+        expectation = expectation(description: "Failed to launch View model")
+        useCase.error = BaseErrorClass(message: "Failed to launch View model")
+        newsViewModel?.fetchNews()
+        wait(for: [expectation], timeout: 10.0)
     }
 }
 
+extension NewsViewModalTest: NewsViewModelResult {
+    
+    func success() {
+        expectation.fulfill()
+    }
+    
+    func gotError(_ error: BaseErrorClass) {
+        XCTAssertTrue(error == BaseErrorClass(message: "Failed to launch View model"))
+        expectation.fulfill()
+    }
+    
+}
