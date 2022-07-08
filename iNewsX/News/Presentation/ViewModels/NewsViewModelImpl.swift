@@ -20,14 +20,18 @@ class NewsViewModelImpl: INewsViewModel {
     }
     
     func fetchNews() {
-        useCase.getTheNews { [weak self] result in
-            switch result {
-            case .success(let model):
-                self?.news = model.data
-                self?.resultImplementation?.success()
-            case .failure(let error):
-                self?.resultImplementation?.gotError(error)
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.useCase.getTheNews { result in
+                switch result {
+                case .success(let model):
+                    self?.news = model.data
+                    self?.resultImplementation?.success()
+                case .failure(let error):
+                    self?.resultImplementation?.gotError(error)
+                }
             }
         }
+        
     }
 }

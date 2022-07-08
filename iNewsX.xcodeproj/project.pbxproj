@@ -22,7 +22,6 @@
 		DE2427FF287406290064A625 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2427FE287406290064A625 /* BaseRequest.swift */; };
 		DE242803287472E90064A625 /* BaseErrorClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE242802287472E90064A625 /* BaseErrorClass.swift */; };
 		DE242809287473D10064A625 /* TaskParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE242808287473D10064A625 /* TaskParameters.swift */; };
-		DE242810287478B50064A625 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24280F287478B50064A625 /* String+extension.swift */; };
 		DE24281328747CD60064A625 /* INetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24281228747CD60064A625 /* INetworkManager.swift */; };
 		DE24281728747CF40064A625 /* RestNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24281628747CF40064A625 /* RestNetworkManager.swift */; };
 		DE24281E287536460064A625 /* INewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24281D287536460064A625 /* INewsRepository.swift */; };
@@ -36,6 +35,15 @@
 		DE24283328755D5C0064A625 /* NewsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24283228755D5C0064A625 /* NewsModule.swift */; };
 		DE24283528755FF50064A625 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24283428755FF50064A625 /* AppContainer.swift */; };
 		DE2428382875658E0064A625 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2428372875658E0064A625 /* UIViewController+extension.swift */; };
+		DE24283C287583010064A625 /* NewsViewModalTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24283B287583010064A625 /* NewsViewModalTest.swift */; };
+		DE2428412876943B0064A625 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24283E287584640064A625 /* MockData.swift */; };
+		DE24284428769C590064A625 /* MockUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24284228769C550064A625 /* MockUseCase.swift */; };
+		DE2428472876A0960064A625 /* MockNewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2428452876A0940064A625 /* MockNewsRepository.swift */; };
+		DE24284A2876A1A20064A625 /* NewsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2428492876A1A20064A625 /* NewsUseCaseTest.swift */; };
+		DE24284D2876A64D0064A625 /* NewsRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24284C2876A64D0064A625 /* NewsRepositoryTest.swift */; };
+		DE2428502876A7430064A625 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24284E2876A7400064A625 /* MockNetworkManager.swift */; };
+		DE2DA4E628770B8600B9128E /* RestNetworkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */; };
+		DE2DA4E828770C3A00B9128E /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA4E728770C3A00B9128E /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +83,6 @@
 		DE2427FE287406290064A625 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
 		DE242802287472E90064A625 /* BaseErrorClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseErrorClass.swift; sourceTree = "<group>"; };
 		DE242808287473D10064A625 /* TaskParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskParameters.swift; sourceTree = "<group>"; };
-		DE24280F287478B50064A625 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		DE24281228747CD60064A625 /* INetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkManager.swift; sourceTree = "<group>"; };
 		DE24281628747CF40064A625 /* RestNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNetworkManager.swift; sourceTree = "<group>"; };
 		DE24281D287536460064A625 /* INewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsRepository.swift; sourceTree = "<group>"; };
@@ -89,6 +96,15 @@
 		DE24283228755D5C0064A625 /* NewsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModule.swift; sourceTree = "<group>"; };
 		DE24283428755FF50064A625 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		DE2428372875658E0064A625 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		DE24283B287583010064A625 /* NewsViewModalTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModalTest.swift; sourceTree = "<group>"; };
+		DE24283E287584640064A625 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		DE24284228769C550064A625 /* MockUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUseCase.swift; sourceTree = "<group>"; };
+		DE2428452876A0940064A625 /* MockNewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNewsRepository.swift; sourceTree = "<group>"; };
+		DE2428492876A1A20064A625 /* NewsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUseCaseTest.swift; sourceTree = "<group>"; };
+		DE24284C2876A64D0064A625 /* NewsRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepositoryTest.swift; sourceTree = "<group>"; };
+		DE24284E2876A7400064A625 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNetworkManagerTest.swift; sourceTree = "<group>"; };
+		DE2DA4E728770C3A00B9128E /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +168,7 @@
 		DE2427C12872B5960064A625 /* iNewsXTests */ = {
 			isa = PBXGroup;
 			children = (
+				DE242839287582C40064A625 /* NewsModule */,
 				DE2427C22872B5960064A625 /* iNewsXTests.swift */,
 			);
 			path = iNewsXTests;
@@ -243,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				DE2427F42873F83C0064A625 /* UIImageView+extension.swift */,
-				DE24280F287478B50064A625 /* String+extension.swift */,
 				DE242828287552180064A625 /* UICollectionViewCell+extension.swift */,
 				DE2428372875658E0064A625 /* UIViewController+extension.swift */,
 			);
@@ -305,6 +321,62 @@
 				DE24283228755D5C0064A625 /* NewsModule.swift */,
 			);
 			path = NewsModule;
+			sourceTree = "<group>";
+		};
+		DE242839287582C40064A625 /* NewsModule */ = {
+			isa = PBXGroup;
+			children = (
+				DE2DA4E428770B4D00B9128E /* NetworkServiceTest */,
+				DE24283D287584520064A625 /* MockTest */,
+				DE24283A287582F20064A625 /* ViewModel */,
+				DE2428482876A18A0064A625 /* UseCaseTest */,
+				DE24284B2876A6390064A625 /* RepositoryTest */,
+			);
+			path = NewsModule;
+			sourceTree = "<group>";
+		};
+		DE24283A287582F20064A625 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DE24283B287583010064A625 /* NewsViewModalTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DE24283D287584520064A625 /* MockTest */ = {
+			isa = PBXGroup;
+			children = (
+				DE24283E287584640064A625 /* MockData.swift */,
+				DE2428452876A0940064A625 /* MockNewsRepository.swift */,
+				DE24284228769C550064A625 /* MockUseCase.swift */,
+				DE24284E2876A7400064A625 /* MockNetworkManager.swift */,
+			);
+			path = MockTest;
+			sourceTree = "<group>";
+		};
+		DE2428482876A18A0064A625 /* UseCaseTest */ = {
+			isa = PBXGroup;
+			children = (
+				DE2428492876A1A20064A625 /* NewsUseCaseTest.swift */,
+			);
+			path = UseCaseTest;
+			sourceTree = "<group>";
+		};
+		DE24284B2876A6390064A625 /* RepositoryTest */ = {
+			isa = PBXGroup;
+			children = (
+				DE24284C2876A64D0064A625 /* NewsRepositoryTest.swift */,
+			);
+			path = RepositoryTest;
+			sourceTree = "<group>";
+		};
+		DE2DA4E428770B4D00B9128E /* NetworkServiceTest */ = {
+			isa = PBXGroup;
+			children = (
+				DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */,
+				DE2DA4E728770C3A00B9128E /* MockURLProtocol.swift */,
+			);
+			path = NetworkServiceTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +513,7 @@
 				DE2427F52873F83C0064A625 /* UIImageView+extension.swift in Sources */,
 				DE24281328747CD60064A625 /* INetworkManager.swift in Sources */,
 				DE24283528755FF50064A625 /* AppContainer.swift in Sources */,
+				DE2428502876A7430064A625 /* MockNetworkManager.swift in Sources */,
 				DE242809287473D10064A625 /* TaskParameters.swift in Sources */,
 				DE2427AC2872B5940064A625 /* AppDelegate.swift in Sources */,
 				DE2427AE2872B5940064A625 /* SceneDelegate.swift in Sources */,
@@ -450,10 +523,12 @@
 				DE24281E287536460064A625 /* INewsRepository.swift in Sources */,
 				DE2428382875658E0064A625 /* UIViewController+extension.swift in Sources */,
 				DE24281728747CF40064A625 /* RestNetworkManager.swift in Sources */,
+				DE24284428769C590064A625 /* MockUseCase.swift in Sources */,
 				DE242821287536B60064A625 /* INewsUseCase.swift in Sources */,
+				DE2428412876943B0064A625 /* MockData.swift in Sources */,
 				DE24282B287557FB0064A625 /* NewsViewModelResult.swift in Sources */,
+				DE2428472876A0960064A625 /* MockNewsRepository.swift in Sources */,
 				DE2428252875381B0064A625 /* NewsRepositoryImpl.swift in Sources */,
-				DE242810287478B50064A625 /* String+extension.swift in Sources */,
 				DE242829287552180064A625 /* UICollectionViewCell+extension.swift in Sources */,
 				DE24283328755D5C0064A625 /* NewsModule.swift in Sources */,
 				DE242803287472E90064A625 /* BaseErrorClass.swift in Sources */,
@@ -468,7 +543,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2DA4E628770B8600B9128E /* RestNetworkManagerTest.swift in Sources */,
+				DE24284D2876A64D0064A625 /* NewsRepositoryTest.swift in Sources */,
 				DE2427C32872B5960064A625 /* iNewsXTests.swift in Sources */,
+				DE2DA4E828770C3A00B9128E /* MockURLProtocol.swift in Sources */,
+				DE24284A2876A1A20064A625 /* NewsUseCaseTest.swift in Sources */,
+				DE24283C287583010064A625 /* NewsViewModalTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -642,6 +722,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -669,6 +750,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

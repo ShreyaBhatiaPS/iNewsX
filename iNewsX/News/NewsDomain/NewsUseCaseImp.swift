@@ -17,12 +17,7 @@ class NewsUseCaseImp: INewsUseCase {
     
     func getTheNews(callback: @escaping NewsCompletionHandler) {
         repository.makeNetworkCallToGetNews { result in
-            switch result {
-            case .success(let model):
-                callback(.success(model))
-            case .failure(let error):
-                callback(.failure(error))
-            }
+            callback(result)
         }
     }
     
