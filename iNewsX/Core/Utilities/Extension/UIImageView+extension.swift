@@ -37,7 +37,7 @@ extension UIImageView {
             data, response, error in
             
             if error != nil {
-                print("Error while fetching image from url: ", error?.localizedDescription ?? "")
+                print(AppConstant.imageURLError, error?.localizedDescription ?? "")
                 return
             }
             

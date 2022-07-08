@@ -16,7 +16,7 @@ class NewsRepositoryImpl: INewsRepository {
     }
     
     func makeNetworkCallToGetNews(completion: NewsCompletionHandler?) {
-        let urlString = "https://inshorts.deta.dev/news?category=science"
+        let urlString = AppConstant.newsUrl
         let request = BaseRequest(url: urlString, body: nil, method: .GET, header: nil)
         network.executeNetworkRequest(News.self, request: request, completion: completion)
     }

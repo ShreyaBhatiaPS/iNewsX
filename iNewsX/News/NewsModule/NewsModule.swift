@@ -12,9 +12,9 @@ import UIKit
 class NewsModule {
     
     func callToNewsViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "NewsViewController") as? NewsViewController else {
-            fatalError("Could not find view controller with identifier")
+        let storyboard = UIStoryboard(name: AppConstant.mainStoryBoard, bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: AppConstant.newsVCIdentifier) as? NewsViewController else {
+            fatalError(AppConstant.newsVCFailure)
         }
         viewController.viewModel = callToNewsViewModel()
         viewController.viewModel?.resultImplementation = viewController

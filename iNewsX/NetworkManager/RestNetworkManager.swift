@@ -24,7 +24,7 @@ class RestNetworkManager: NSObject, INetworkManager, URLSessionDelegate {
                 // Conversion
                 guard let data = data else {
                     DispatchQueue.main.async {
-                        completion?(.failure(BaseErrorClass(message: "Data not found")))
+                        completion?(.failure(BaseErrorClass(message: AppConstant.dataNotFound)))
                     }
                     return
                 }
@@ -32,7 +32,7 @@ class RestNetworkManager: NSObject, INetworkManager, URLSessionDelegate {
                 if let statusCode = (response as? HTTPURLResponse)?.statusCode {
                     if statusCode >= 400 {
                         DispatchQueue.main.async {
-                            completion?(.failure(BaseErrorClass(message: "Network error with status code: \(statusCode)")))
+                            completion?(.failure(BaseErrorClass(message: "\(AppConstant.statusCodeError) \(statusCode)")))
                         return
                         }
                     }
@@ -62,7 +62,7 @@ class RestNetworkManager: NSObject, INetworkManager, URLSessionDelegate {
     func createURLRequest(request: BaseRequest) throws -> URLRequest {
         
         guard let url = URL(string: request.url) else {
-            throw BaseErrorClass(message: "Failed to get URL")
+            throw BaseErrorClass(message: AppConstant.urlFailure)
         }
         var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         urlRequest.httpMethod = request.method.rawValue
