@@ -38,7 +38,7 @@ class RestNetworkManagerTest: XCTestCase {
                 XCTFail("Unexpected error: \(error.message)")
             }
         }
-        wait(for: [expectation], timeout: 5.0)
+        wait(for: [expectation], timeout: 10.0)
     }
     
     func testNetworkClassURLFailure() {

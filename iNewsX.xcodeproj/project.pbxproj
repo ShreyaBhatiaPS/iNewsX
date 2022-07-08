@@ -233,9 +233,9 @@
 		DE2427F02873F7980064A625 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				DE2427F12873F7A40064A625 /* Application */,
 				DE2427F7287404AF0064A625 /* BaseClasses */,
 				DE2427F22873F7E80064A625 /* Utilities */,
-				DE2427F12873F7A40064A625 /* Application */,
 			);
 			path = Core;
 			sourceTree = "<group>";
