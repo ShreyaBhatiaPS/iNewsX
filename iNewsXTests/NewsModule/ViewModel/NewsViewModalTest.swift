@@ -18,7 +18,7 @@ class NewsViewModalTest: XCTestCase {
         super.setUp()
         useCase = MockUseCase()
         newsViewModel = NewsViewModelImpl(useCase: useCase)
-        newsViewModel?.resultImplementation = self
+        newsViewModel?.resultDelegate = self
     }
     
     override func tearDown() {

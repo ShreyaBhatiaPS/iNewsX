@@ -9,7 +9,7 @@ import Foundation
 
 class NewsViewModelImpl: INewsViewModel {
     
-    var resultImplementation: NewsViewModelResult?
+    var resultDelegate: NewsViewModelResult?
     
     var news: [NewsData] = []
     
@@ -20,18 +20,18 @@ class NewsViewModelImpl: INewsViewModel {
     }
     
     func fetchNews() {
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.useCase.getTheNews { result in
-                switch result {
-                case .success(let model):
-                    self?.news = model.data
-                    self?.resultImplementation?.success()
-                case .failure(let error):
-                    self?.resultImplementation?.gotError(error)
-                }
+        self.useCase.getTheNews { [weak self] result in
+            switch result {
+            case .success(let model):
+                self?.getNewsData(model: model)
+            case .failure(let error):
+                self?.resultDelegate?.gotError(error)
             }
         }
-        
+    }
+    
+    private func getNewsData(model: News) {
+        self.news = model.data
+        resultDelegate?.success()
     }
 }

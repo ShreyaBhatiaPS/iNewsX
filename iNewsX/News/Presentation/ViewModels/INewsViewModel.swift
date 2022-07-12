@@ -10,5 +10,5 @@ import Foundation
 protocol INewsViewModel {
     var news: [NewsData] { get }
     func fetchNews()
-    var resultImplementation: NewsViewModelResult? { get set }
+    var resultDelegate: NewsViewModelResult? { get set }
 }

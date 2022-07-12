@@ -16,6 +16,7 @@ class NewsRepositoryTest: XCTestCase {
     override func setUp() {
         super.setUp()
         mockNetwork = MockNetworkManager()
+        mockNetwork.newsData = MockData.newsData
         newsRepository = NewsRepositoryImpl(network: mockNetwork)
     }
     
@@ -26,9 +27,6 @@ class NewsRepositoryTest: XCTestCase {
     }
     
     func testRepositorySuccess() {
-        
-        mockNetwork.newsData = MockData.newsData
-        
         newsRepository.makeNetworkCallToGetNews { [weak self] result in
             switch result {
             case .success(let model):

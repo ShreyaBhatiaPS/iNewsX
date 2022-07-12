@@ -28,7 +28,7 @@ class iNewsXUITests: XCTestCase {
         let newsCollectionView = app.collectionViews.matching(identifier: "NewsCollectionView")
         
         let collectionViewCells = newsCollectionView.cells
-        XCTAssert(collectionViewCells.element.waitForExistence(timeout: 5.0))
+        XCTAssert(collectionViewCells.element.waitForExistence(timeout: 10.0))
         
         if collectionViewCells.count > 0 {
             

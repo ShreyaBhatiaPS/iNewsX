@@ -26,8 +26,6 @@ final class NewsUseCaseTest: XCTestCase {
     }
     
     func testNewsDataSuccess() {
-        mocRepository.newsData = MockData.newsData
-        
         useCase?.getTheNews(callback: { [weak self] result in
             switch result {
             case .success(let model):
@@ -40,7 +38,6 @@ final class NewsUseCaseTest: XCTestCase {
     
     func testNewsDataFailure() {
         mocRepository.newsData = nil
-        
         useCase?.getTheNews(callback: { result in
             switch result {
             case .success(let model):

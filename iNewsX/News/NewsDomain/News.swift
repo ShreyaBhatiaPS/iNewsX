@@ -15,13 +15,12 @@ struct News: Codable, Equatable {
 
 struct NewsData: Codable, Equatable {
     let title, description, publishedDate: String
-    let imageUrl, newsUrl: String
+    let imageUrl: String
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
         case description = "content"
         case publishedDate = "date"
         case imageUrl = "imageUrl"
-        case newsUrl = "url"
     }
 }

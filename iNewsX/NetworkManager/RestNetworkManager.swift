@@ -7,56 +7,41 @@
 
 import Foundation
 
-class RestNetworkManager: NSObject, INetworkManager, URLSessionDelegate {
+class RestNetworkManager: NSObject, INetworkManager {
+    
+    private let session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
     func executeNetworkRequest<T: Codable>(_ type: T.Type, request: BaseRequest, completion: TaskCompletionHandler<T>?) {
         
+        var urlRequest: URLRequest!
         do {
-            let urlRequest = try self.createURLRequest(request: request)
-            let session = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-            let task = session.dataTask(with: urlRequest) { data, response, error in
-                guard error == nil else {
-                    DispatchQueue.main.async {
-                        completion?(.failure(BaseErrorClass(message: error!.localizedDescription)))
-                    }
-                    return
-                }
-                // Conversion
-                guard let data = data else {
-                    DispatchQueue.main.async {
-                        completion?(.failure(BaseErrorClass(message: AppConstant.dataNotFound)))
-                    }
-                    return
-                }
-                
-                if let statusCode = (response as? HTTPURLResponse)?.statusCode {
-                    if statusCode >= 400 {
-                        DispatchQueue.main.async {
-                            completion?(.failure(BaseErrorClass(message: "\(AppConstant.statusCodeError) \(statusCode)")))
-                        return
-                        }
-                    }
-                }
-                
-                DispatchQueue.main.async {
-                    do {
-                        let model = try JSONDecoder().decode(type, from: data)
-                        completion?(.success(model))
-                    } catch {
-                        completion?(.failure(BaseErrorClass(message: error.localizedDescription)))
-                    }
-                }
-                
-            }
-            task.resume()
-            
+            urlRequest = try self.createURLRequest(request: request)
         } catch {
             DispatchQueue.main.async {
                 completion?(.failure(BaseErrorClass(message: error.localizedDescription)))
             }
         }
-        
-        
+        let task = session.dataTask(with: urlRequest) { data, response, error in
+            
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion?(.failure(BaseErrorClass(message: error.localizedDescription)))
+                } else {
+                    do {
+                        let model = try JSONDecoder().decode(type, from: data!)
+                        completion?(.success(model))
+                    } catch {
+                        completion?(.failure(BaseErrorClass(message: error.localizedDescription)))
+                    }
+                }
+            }
+            
+        }
+        task.resume()
     }
     
     func createURLRequest(request: BaseRequest) throws -> URLRequest {
@@ -72,7 +57,7 @@ class RestNetworkManager: NSObject, INetworkManager, URLSessionDelegate {
                 let bodyData = try JSONSerialization.data(withJSONObject: body, options: [.prettyPrinted])
                 urlRequest.httpBody = bodyData
             } catch {
-                throw BaseErrorClass(message: error.localizedDescription)
+                throw error
             }
         }
     
@@ -82,7 +67,5 @@ class RestNetworkManager: NSObject, INetworkManager, URLSessionDelegate {
     
         return urlRequest
     }
-    
-    override init() {}
     
 }

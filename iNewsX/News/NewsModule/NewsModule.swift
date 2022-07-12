@@ -17,7 +17,7 @@ class NewsModule {
             fatalError(AppConstant.newsVCFailure)
         }
         viewController.viewModel = callToNewsViewModel()
-        viewController.viewModel?.resultImplementation = viewController
+        viewController.viewModel?.resultDelegate = viewController
         return viewController
     }
     

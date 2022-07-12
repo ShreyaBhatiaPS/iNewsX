@@ -11,11 +11,5 @@ struct MockData {
     static let newsData: News = News(data: [NewsData(title: "Weather Update",
                                                          description: "Heavy rainfall in some areas",
                                                          publishedDate: "Thursday, 21st June, 2022",
-                                                         imageUrl: "getimage.com",
-                                                         newsUrl: "https://abcnews.com")])
-    
-    static func encodeData() -> Data {
-        let encodedData = try! JSONEncoder().encode(newsData)
-        return encodedData
-    }
+                                                         imageUrl: "getimage.com")])
 }

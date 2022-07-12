@@ -19,15 +19,7 @@ class RestNetworkManagerTest: XCTestCase {
     
     func testNetworkClassSuccess() {
         let expectation = expectation(description: "Successfully called the network")
-        
-        MockURLProtocol.requestHandler = { request in
-            guard let url = request.url else {
-                throw BaseErrorClass(message: "Failed to load url")
-            }
-            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
-            return (response, MockData.encodeData())
-        }
-        
+
         let baseRequest = BaseRequest(url: "https://inshorts.deta.dev/news?category=science", body: nil, method: .GET, header: nil)
         networkManager.executeNetworkRequest(News.self, request: baseRequest) { result in
             switch result {

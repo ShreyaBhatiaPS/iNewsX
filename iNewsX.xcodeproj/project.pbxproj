@@ -44,7 +44,6 @@
 		DE2428502876A7430064A625 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24284E2876A7400064A625 /* MockNetworkManager.swift */; };
 		DE2878EB2877F310001FEAD4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2878EA2877F310001FEAD4 /* AppConstants.swift */; };
 		DE2DA4E628770B8600B9128E /* RestNetworkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */; };
-		DE2DA4E828770C3A00B9128E /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA4E728770C3A00B9128E /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +105,6 @@
 		DE24284E2876A7400064A625 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		DE2878EA2877F310001FEAD4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNetworkManagerTest.swift; sourceTree = "<group>"; };
-		DE2DA4E728770C3A00B9128E /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -385,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */,
-				DE2DA4E728770C3A00B9128E /* MockURLProtocol.swift */,
 			);
 			path = NetworkServiceTest;
 			sourceTree = "<group>";
@@ -558,7 +555,6 @@
 				DE2DA4E628770B8600B9128E /* RestNetworkManagerTest.swift in Sources */,
 				DE24284D2876A64D0064A625 /* NewsRepositoryTest.swift in Sources */,
 				DE2427C32872B5960064A625 /* iNewsXTests.swift in Sources */,
-				DE2DA4E828770C3A00B9128E /* MockURLProtocol.swift in Sources */,
 				DE24284A2876A1A20064A625 /* NewsUseCaseTest.swift in Sources */,
 				DE24283C287583010064A625 /* NewsViewModalTest.swift in Sources */,
 			);
