@@ -44,7 +44,7 @@ class RestNetworkManager: NSObject, INetworkManager {
         task.resume()
     }
     
-    func createURLRequest(request: BaseRequest) throws -> URLRequest {
+    private func createURLRequest(request: BaseRequest) throws -> URLRequest {
         
         guard let url = URL(string: request.url) else {
             throw BaseErrorClass(message: AppConstant.urlFailure)
