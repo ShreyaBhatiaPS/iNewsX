@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias NewsPresentationCompletionHandler = (Result<NewsList, BaseErrorClass>) -> ()
+
 protocol INewsUseCase {
-    func getTheNews(callback: @escaping NewsDomainCompletionHandler)
+    func getTheNews(callback: @escaping NewsPresentationCompletionHandler)
 }

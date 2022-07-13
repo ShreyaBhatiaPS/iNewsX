@@ -33,7 +33,7 @@ class RestNetworkManagerTest: XCTestCase {
         }
 
         let baseRequest = BaseRequest(url: "abc.com", body: nil, method: .GET, header: nil)
-        networkManager.executeNetworkRequest(NewsList.self, request: baseRequest) { result in
+        networkManager.executeNetworkRequest(NewsDTO.self, request: baseRequest) { result in
             switch result {
             case .success(let model):
                 XCTAssertTrue(model.data.count >= 1)
@@ -60,7 +60,7 @@ class RestNetworkManagerTest: XCTestCase {
         }
         
         let baseRequest = BaseRequest(url: "abc.com/..", body: nil, method: .GET, header: nil)
-        networkManager.executeNetworkRequest(NewsList.self, request: baseRequest) { result in
+        networkManager.executeNetworkRequest(NewsDTO.self, request: baseRequest) { result in
             switch result {
             case .success(_):
                 XCTFail("got the data in failed test case")

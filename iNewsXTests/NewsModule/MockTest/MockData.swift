@@ -8,7 +8,7 @@
 import Foundation
 
 struct MockData {
-    static let newsData: NewsList = NewsList(data: [NewsData(title: "Weather Update",
+    static let newsData: DomainNewsList = DomainNewsList(data: [DomainNewsData(title: "Weather Update",
                                                              content: "Heavy rainfall in some areas",
                                                              date: "Thursday, 21st June, 2022",
                                                          imageUrl: "getimage.com")])
@@ -19,7 +19,7 @@ struct MockData {
                                                          imageUrl: "getimage.com")])
     
     static func encodedDictionary() -> Data {
-        let encoded = try! JSONEncoder().encode(newsData)
+        let encoded = try! JSONEncoder().encode(newsDTO)
         return encoded
     }
 }

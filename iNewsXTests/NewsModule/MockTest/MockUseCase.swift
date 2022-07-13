@@ -13,11 +13,16 @@ class MockUseCase: INewsUseCase {
     var error: BaseErrorClass?
     let repository = MockNewsRepository()
     
-    func getTheNews(callback: @escaping NewsDomainCompletionHandler) {
+    func getTheNews(callback: @escaping NewsPresentationCompletionHandler) {
         repository.news = news
         repository.error = error
         repository.makeServiceCall { result in
-            callback(result)
+            switch result {
+            case .success(let newsList):
+                callback(.success(newsList.toPresentation()))
+            case .failure(let error):
+                callback(.failure(error))
+            }
         }
     }
 }

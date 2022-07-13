@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias NewsDomainCompletionHandler = (Result<NewsList, BaseErrorClass>) -> ()
+typealias NewsDomainCompletionHandler = (Result<DomainNewsList, BaseErrorClass>) -> ()
 
 protocol INewsRepository {
     func makeServiceCall(completion: NewsDomainCompletionHandler?)

@@ -20,13 +20,13 @@ struct NewsDataDTO: Codable, Equatable {
 
 extension NewsDTO {
     
-    func toDomain() -> NewsList {
+    func toDomain() -> DomainNewsList {
         return .init(data: data.map({$0.toDomain()}))
     }
 }
 
 extension NewsDataDTO {
-    func toDomain() -> NewsData {
+    func toDomain() -> DomainNewsData {
         return .init(title: self.title,
                      content: self.content,
                      date: self.date,
