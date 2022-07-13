@@ -48,6 +48,7 @@
 		DE4D2DA1287E76AB00E20F5F /* NewsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA0287E76AB00E20F5F /* NewsServiceImpl.swift */; };
 		DE4D2DA4287E7AE100E20F5F /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA2287E7AC100E20F5F /* MockService.swift */; };
 		DE4D2DA7287E7C2300E20F5F /* NewsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA6287E7C2300E20F5F /* NewsServiceTest.swift */; };
+		DE4D2DAA287E915800E20F5F /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA9287E915800E20F5F /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		DE4D2DA0287E76AB00E20F5F /* NewsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceImpl.swift; sourceTree = "<group>"; };
 		DE4D2DA2287E7AC100E20F5F /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		DE4D2DA6287E7C2300E20F5F /* NewsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTest.swift; sourceTree = "<group>"; };
+		DE4D2DA9287E915800E20F5F /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,8 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				DE242820287536B60064A625 /* INewsUseCase.swift */,
-				DE2427DF2872B6440064A625 /* News.swift */,
 				DE242822287536E70064A625 /* NewsUseCaseImp.swift */,
+				DE4D2DA8287E8FD000E20F5F /* Data */,
 			);
 			path = NewsDomain;
 			sourceTree = "<group>";
@@ -394,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */,
+				DE4D2DA9287E915800E20F5F /* MockURLProtocol.swift */,
 			);
 			path = NetworkServiceTest;
 			sourceTree = "<group>";
@@ -413,6 +416,14 @@
 				DE4D2DA6287E7C2300E20F5F /* NewsServiceTest.swift */,
 			);
 			path = ServiceTest;
+			sourceTree = "<group>";
+		};
+		DE4D2DA8287E8FD000E20F5F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DE2427DF2872B6440064A625 /* News.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4D2DAA287E915800E20F5F /* MockURLProtocol.swift in Sources */,
 				DE2DA4E628770B8600B9128E /* RestNetworkManagerTest.swift in Sources */,
 				DE24284D2876A64D0064A625 /* NewsRepositoryTest.swift in Sources */,
 				DE2427C32872B5960064A625 /* iNewsXTests.swift in Sources */,

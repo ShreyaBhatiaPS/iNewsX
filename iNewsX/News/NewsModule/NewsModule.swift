@@ -16,13 +16,12 @@ class NewsModule {
         guard let viewController = storyboard.instantiateViewController(withIdentifier: ViewControllerConstant.newsVCIdentifier) as? NewsViewController else {
             fatalError(ViewControllerConstant.newsVCFailure)
         }
-        viewController.viewModel = callToNewsViewModel()
-        viewController.viewModel?.resultDelegate = viewController
+        viewController.viewModel = callToNewsViewModel(viewController: viewController)
         return viewController
     }
     
-    private func callToNewsViewModel() -> INewsViewModel {
-        let viewModel = NewsViewModelImpl(useCase: self.callToNewsUseCase())
+    private func callToNewsViewModel(viewController: UIViewController) -> INewsViewModel {
+        let viewModel = NewsViewModelImpl(useCase: self.callToNewsUseCase(), resultDelegate: viewController as? NewsViewModelResult)
         return viewModel
     }
     

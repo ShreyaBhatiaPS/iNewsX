@@ -23,8 +23,6 @@ struct DataNews: Codable, Equatable {
     var imageUrl: String
 }
 
-
-
 struct NewsData: Codable, Equatable {
     let title, description, publishedDate: String
     let imageUrl: String

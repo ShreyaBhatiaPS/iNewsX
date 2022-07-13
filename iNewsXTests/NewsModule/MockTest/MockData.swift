@@ -12,4 +12,9 @@ struct MockData {
                                                          description: "Heavy rainfall in some areas",
                                                          publishedDate: "Thursday, 21st June, 2022",
                                                          imageUrl: "getimage.com")])
+    
+    static func encodedDictionary() -> Data {
+        let encoded = try! JSONEncoder().encode(newsData)
+        return encoded
+    }
 }

@@ -15,8 +15,9 @@ class NewsViewModelImpl: INewsViewModel {
     
     private let useCase: INewsUseCase
     
-    init(useCase: INewsUseCase) {
+    init(useCase: INewsUseCase, resultDelegate: NewsViewModelResult?) {
         self.useCase = useCase
+        self.resultDelegate = resultDelegate
     }
     
     func fetchNews() {
