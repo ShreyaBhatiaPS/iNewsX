@@ -9,14 +9,14 @@ import Foundation
 
 class MockUseCase: INewsUseCase {
     
-    var news: News?
+    var news: NewsList?
     var error: BaseErrorClass?
     let repository = MockNewsRepository()
     
     func getTheNews(callback: @escaping NewsCompletionHandler) {
-        repository.newsData = news
+        repository.news = news
         repository.error = error
-        repository.makeNetworkCallToGetNews { result in
+        repository.makeServiceCall { result in
             callback(result)
         }
     }

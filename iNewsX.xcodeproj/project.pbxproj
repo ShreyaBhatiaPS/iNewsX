@@ -42,8 +42,12 @@
 		DE24284A2876A1A20064A625 /* NewsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2428492876A1A20064A625 /* NewsUseCaseTest.swift */; };
 		DE24284D2876A64D0064A625 /* NewsRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24284C2876A64D0064A625 /* NewsRepositoryTest.swift */; };
 		DE2428502876A7430064A625 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE24284E2876A7400064A625 /* MockNetworkManager.swift */; };
-		DE2878EB2877F310001FEAD4 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2878EA2877F310001FEAD4 /* AppConstants.swift */; };
+		DE2878EB2877F310001FEAD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2878EA2877F310001FEAD4 /* Constants.swift */; };
 		DE2DA4E628770B8600B9128E /* RestNetworkManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */; };
+		DE4D2D9F287E769C00E20F5F /* INewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2D9E287E769C00E20F5F /* INewsService.swift */; };
+		DE4D2DA1287E76AB00E20F5F /* NewsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA0287E76AB00E20F5F /* NewsServiceImpl.swift */; };
+		DE4D2DA4287E7AE100E20F5F /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA2287E7AC100E20F5F /* MockService.swift */; };
+		DE4D2DA7287E7C2300E20F5F /* NewsServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA6287E7C2300E20F5F /* NewsServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +107,12 @@
 		DE2428492876A1A20064A625 /* NewsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUseCaseTest.swift; sourceTree = "<group>"; };
 		DE24284C2876A64D0064A625 /* NewsRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepositoryTest.swift; sourceTree = "<group>"; };
 		DE24284E2876A7400064A625 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
-		DE2878EA2877F310001FEAD4 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		DE2878EA2877F310001FEAD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestNetworkManagerTest.swift; sourceTree = "<group>"; };
+		DE4D2D9E287E769C00E20F5F /* INewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INewsService.swift; sourceTree = "<group>"; };
+		DE4D2DA0287E76AB00E20F5F /* NewsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceImpl.swift; sourceTree = "<group>"; };
+		DE4D2DA2287E7AC100E20F5F /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
+		DE4D2DA6287E7C2300E20F5F /* NewsServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +297,7 @@
 		DE2428182875353E0064A625 /* News */ = {
 			isa = PBXGroup;
 			children = (
+				DE4D2D9D287E767100E20F5F /* Services */,
 				DE242836287564060064A625 /* NewsModule */,
 				DE24281F287536A30064A625 /* NewsDomain */,
 				DE2428192875354B0064A625 /* NewsData */,
@@ -332,6 +341,7 @@
 				DE2DA4E428770B4D00B9128E /* NetworkServiceTest */,
 				DE2428482876A18A0064A625 /* UseCaseTest */,
 				DE24284B2876A6390064A625 /* RepositoryTest */,
+				DE4D2DA5287E7BFB00E20F5F /* ServiceTest */,
 			);
 			path = NewsModule;
 			sourceTree = "<group>";
@@ -351,6 +361,7 @@
 				DE2428452876A0940064A625 /* MockNewsRepository.swift */,
 				DE24284228769C550064A625 /* MockUseCase.swift */,
 				DE24284E2876A7400064A625 /* MockNetworkManager.swift */,
+				DE4D2DA2287E7AC100E20F5F /* MockService.swift */,
 			);
 			path = MockTest;
 			sourceTree = "<group>";
@@ -374,7 +385,7 @@
 		DE2878E92877F2F0001FEAD4 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				DE2878EA2877F310001FEAD4 /* AppConstants.swift */,
+				DE2878EA2877F310001FEAD4 /* Constants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -385,6 +396,23 @@
 				DE2DA4E528770B8600B9128E /* RestNetworkManagerTest.swift */,
 			);
 			path = NetworkServiceTest;
+			sourceTree = "<group>";
+		};
+		DE4D2D9D287E767100E20F5F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DE4D2D9E287E769C00E20F5F /* INewsService.swift */,
+				DE4D2DA0287E76AB00E20F5F /* NewsServiceImpl.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DE4D2DA5287E7BFB00E20F5F /* ServiceTest */ = {
+			isa = PBXGroup;
+			children = (
+				DE4D2DA6287E7C2300E20F5F /* NewsServiceTest.swift */,
+			);
+			path = ServiceTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,15 +557,18 @@
 				DE2427E02872B6440064A625 /* News.swift in Sources */,
 				DE2427EB2872C07B0064A625 /* NewsCollectionViewCell.swift in Sources */,
 				DE24281E287536460064A625 /* INewsRepository.swift in Sources */,
+				DE4D2DA4287E7AE100E20F5F /* MockService.swift in Sources */,
 				DE2428382875658E0064A625 /* UIViewController+extension.swift in Sources */,
 				DE24281728747CF40064A625 /* RestNetworkManager.swift in Sources */,
+				DE4D2DA1287E76AB00E20F5F /* NewsServiceImpl.swift in Sources */,
 				DE24284428769C590064A625 /* MockUseCase.swift in Sources */,
 				DE242821287536B60064A625 /* INewsUseCase.swift in Sources */,
 				DE2428412876943B0064A625 /* MockData.swift in Sources */,
+				DE4D2D9F287E769C00E20F5F /* INewsService.swift in Sources */,
 				DE24282B287557FB0064A625 /* NewsViewModelResult.swift in Sources */,
 				DE2428472876A0960064A625 /* MockNewsRepository.swift in Sources */,
 				DE2428252875381B0064A625 /* NewsRepositoryImpl.swift in Sources */,
-				DE2878EB2877F310001FEAD4 /* AppConstants.swift in Sources */,
+				DE2878EB2877F310001FEAD4 /* Constants.swift in Sources */,
 				DE242829287552180064A625 /* UICollectionViewCell+extension.swift in Sources */,
 				DE24283328755D5C0064A625 /* NewsModule.swift in Sources */,
 				DE242803287472E90064A625 /* BaseErrorClass.swift in Sources */,
@@ -557,6 +588,7 @@
 				DE2427C32872B5960064A625 /* iNewsXTests.swift in Sources */,
 				DE24284A2876A1A20064A625 /* NewsUseCaseTest.swift in Sources */,
 				DE24283C287583010064A625 /* NewsViewModalTest.swift in Sources */,
+				DE4D2DA7287E7C2300E20F5F /* NewsServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

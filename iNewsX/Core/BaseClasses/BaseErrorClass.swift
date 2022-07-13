@@ -7,18 +7,18 @@
 
 import Foundation
 
-public class BaseErrorClass: Error {
+class BaseErrorClass: Error {
     
-    public let message: String
+    let message: String
     
-    public init(message: String) {
+    init(message: String) {
         self.message = message
     }
 }
 
 extension BaseErrorClass: Equatable {
     
-    public static func == (lhs: BaseErrorClass, rhs: BaseErrorClass) -> Bool {
+    static func == (lhs: BaseErrorClass, rhs: BaseErrorClass) -> Bool {
         return lhs.message == rhs.message
     }
     

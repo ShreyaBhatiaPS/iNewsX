@@ -8,7 +8,7 @@
 import Foundation
 
 struct MockData {
-    static let newsData: News = News(data: [NewsData(title: "Weather Update",
+    static let newsData: NewsList = NewsList(data: [NewsData(title: "Weather Update",
                                                          description: "Heavy rainfall in some areas",
                                                          publishedDate: "Thursday, 21st June, 2022",
                                                          imageUrl: "getimage.com")])

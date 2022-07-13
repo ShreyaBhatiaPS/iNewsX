@@ -9,16 +9,14 @@ import Foundation
 
 class NewsRepositoryImpl: INewsRepository {
     
-    let network: INetworkManager!
+    private let service: INewsService
     
-    init(network: INetworkManager) {
-        self.network = network
+    init(service: INewsService) {
+        self.service = service
     }
     
-    func makeNetworkCallToGetNews(completion: NewsCompletionHandler?) {
-        let urlString = AppConstant.newsUrl
-        let request = BaseRequest(url: urlString, body: nil, method: .GET, header: nil)
-        network.executeNetworkRequest(News.self, request: request, completion: completion)
+    func makeServiceCall(completion: NewsCompletionHandler?) {
+        service.makeNetworkRequest(completion: completion)
     }
     
     

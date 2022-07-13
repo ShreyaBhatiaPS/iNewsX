@@ -9,5 +9,5 @@ import Foundation
 
 typealias TaskCompletionHandler<T> = (Result<T, BaseErrorClass>) -> ()
 
-typealias NewsCompletionHandler = (Result<News, BaseErrorClass>) -> ()
+typealias NewsCompletionHandler = (Result<NewsList, BaseErrorClass>) -> ()
 

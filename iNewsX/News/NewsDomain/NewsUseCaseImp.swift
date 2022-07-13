@@ -16,7 +16,7 @@ class NewsUseCaseImp: INewsUseCase {
     }
     
     func getTheNews(callback: @escaping NewsCompletionHandler) {
-        repository.makeNetworkCallToGetNews { result in
+        repository.makeServiceCall { result in
             callback(result)
         }
     }

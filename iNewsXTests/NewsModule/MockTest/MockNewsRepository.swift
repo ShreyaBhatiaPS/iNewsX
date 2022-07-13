@@ -10,14 +10,15 @@ import Foundation
 
 class MockNewsRepository: INewsRepository {
     
-    var newsData: News?
+    var news: NewsList?
     var error: BaseErrorClass?
+    let service = MockService()
     
-    func makeNetworkCallToGetNews(completion: NewsCompletionHandler?) {
-        if let newsData = newsData {
-            completion!(.success(newsData))
-        } else if let error = error {
-            completion!(.failure(error))
+    func makeServiceCall(completion: NewsCompletionHandler?) {
+        service.newsData = news
+        service.error = error
+        service.makeNetworkRequest { result in
+            completion!(result)
         }
     }
 }

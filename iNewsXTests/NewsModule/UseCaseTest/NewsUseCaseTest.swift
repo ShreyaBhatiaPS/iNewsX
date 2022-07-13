@@ -29,7 +29,7 @@ final class NewsUseCaseTest: XCTestCase {
         useCase?.getTheNews(callback: { [weak self] result in
             switch result {
             case .success(let model):
-                XCTAssertEqual(model.data, self?.mocRepository.newsData?.data)
+                XCTAssertEqual(model.data, self?.mocRepository.news?.data)
             case .failure(let error):
                 XCTFail(error.message)
             }
@@ -37,7 +37,7 @@ final class NewsUseCaseTest: XCTestCase {
     }
     
     func testNewsDataFailure() {
-        mocRepository.newsData = nil
+        mocRepository.news = nil
         useCase?.getTheNews(callback: { result in
             switch result {
             case .success(let model):

@@ -1,36 +1,37 @@
 //
-//  NewsRepositoryTest.swift
+//  NewsServiceTest.swift
 //  iNewsXTests
 //
-//  Created by Shreya Bhatia on 07/07/22.
+//  Created by Shreya Bhatia on 13/07/22.
 //
 
 import XCTest
 @testable import iNewsX
 
-class NewsRepositoryTest: XCTestCase {
+class NewsServiceTest: XCTestCase {
     
-    var newsRepository: NewsRepositoryImpl!
-    var mockService: MockService!
+    var newsService: NewsServiceImpl!
+    var mockNetwork: MockNetworkManager!
     
     override func setUp() {
         super.setUp()
-        mockService = MockService()
-        mockService.newsData = MockData.newsData
-        newsRepository = NewsRepositoryImpl(service: mockService)
+        mockNetwork = MockNetworkManager()
+        mockNetwork.newsData = MockData.newsData
+        newsService = NewsServiceImpl(network: mockNetwork)
     }
     
     override func tearDown() {
         super.tearDown()
-        mockService = nil
-        newsRepository = nil
+        mockNetwork = nil
+        newsService = nil
     }
     
     func testRepositorySuccess() {
-        newsRepository.makeServiceCall { [weak self] result in
+        
+        newsService.makeNetworkRequest { [weak self] result in
             switch result {
             case .success(let model):
-                XCTAssertEqual(model.data, self?.mockService.newsData?.data)
+                XCTAssertEqual(model.data, self?.mockNetwork.newsData?.data)
             case .failure(let error):
                 XCTFail(error.message)
             }
@@ -38,9 +39,8 @@ class NewsRepositoryTest: XCTestCase {
     }
     
     func testRepositoryFailure() {
-        
-        mockService.newsData = nil
-        newsRepository.makeServiceCall { result in
+        mockNetwork.newsData = nil
+        newsService.makeNetworkRequest { result in
             switch result {
             case .success(let model):
                 XCTAssertEqual(model.data, nil)
@@ -49,5 +49,5 @@ class NewsRepositoryTest: XCTestCase {
             }
         }
     }
-    
 }
+

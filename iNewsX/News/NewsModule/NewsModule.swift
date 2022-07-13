@@ -12,9 +12,9 @@ import UIKit
 class NewsModule {
     
     func callToNewsViewController() -> UIViewController {
-        let storyboard = UIStoryboard(name: AppConstant.mainStoryBoard, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: AppConstant.newsVCIdentifier) as? NewsViewController else {
-            fatalError(AppConstant.newsVCFailure)
+        let storyboard = UIStoryboard(name: ViewControllerConstant.mainStoryBoard, bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: ViewControllerConstant.newsVCIdentifier) as? NewsViewController else {
+            fatalError(ViewControllerConstant.newsVCFailure)
         }
         viewController.viewModel = callToNewsViewModel()
         viewController.viewModel?.resultDelegate = viewController
@@ -32,7 +32,12 @@ class NewsModule {
     }
     
     private func callToNewsRepo() -> INewsRepository {
-        let repo = NewsRepositoryImpl(network: RestNetworkManager())
+        let repo = NewsRepositoryImpl(service: self.callToNewsService())
         return repo
+    }
+    
+    private func callToNewsService() -> INewsService {
+        let service = NewsServiceImpl(network: RestNetworkManager())
+        return service
     }
 }

@@ -30,7 +30,7 @@ class NewsViewModelImpl: INewsViewModel {
         }
     }
     
-    private func getNewsData(model: News) {
+    private func getNewsData(model: NewsList) {
         self.news = model.data
         resultDelegate?.success()
     }

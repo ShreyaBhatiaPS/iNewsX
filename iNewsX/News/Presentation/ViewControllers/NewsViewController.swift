@@ -24,7 +24,7 @@ class NewsViewController: UIViewController {
     }
     
     private func addAccessibilityIdentifier() {
-        newsCollectionView.accessibilityIdentifier = AppConstant.newsCollectionViewAccessibilityIdentifier
+        newsCollectionView.accessibilityIdentifier = ViewControllerConstant.newsCollectionViewAccessibilityIdentifier
     }
 }
 
@@ -46,7 +46,7 @@ extension NewsViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = newsCollectionView.dequeueReusableCell(withReuseIdentifier: AppConstant.newsCollectionViewCellIdentifier, for: indexPath) as? NewsCollectionViewCell else {
+        guard let cell = newsCollectionView.dequeueReusableCell(withReuseIdentifier: ViewControllerConstant.newsCollectionViewCellIdentifier, for: indexPath) as? NewsCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.newsData = viewModel?.news[indexPath.row]
