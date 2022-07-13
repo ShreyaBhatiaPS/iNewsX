@@ -18,8 +18,8 @@ class NewsCollectionViewCell: UICollectionViewCell {
     var newsData: NewsData? {
         didSet {
             title.text = newsData?.title
-            publishedDate.text = newsData?.publishedDate
-            newsdesc.text = newsData?.description
+            publishedDate.text = newsData?.date
+            newsdesc.text = newsData?.content
             imageView.downloadImage(from: newsData?.imageUrl ?? "")
         }
     }

@@ -9,8 +9,8 @@ import Foundation
 
 struct MockData {
     static let newsData: NewsList = NewsList(data: [NewsData(title: "Weather Update",
-                                                         description: "Heavy rainfall in some areas",
-                                                         publishedDate: "Thursday, 21st June, 2022",
+                                                             content: "Heavy rainfall in some areas",
+                                                             date: "Thursday, 21st June, 2022",
                                                          imageUrl: "getimage.com")])
     
     static func encodedDictionary() -> Data {
