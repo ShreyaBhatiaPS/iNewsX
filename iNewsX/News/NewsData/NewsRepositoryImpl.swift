@@ -15,8 +15,15 @@ class NewsRepositoryImpl: INewsRepository {
         self.service = service
     }
     
-    func makeServiceCall(completion: NewsCompletionHandler?) {
-        service.makeNetworkRequest(completion: completion)
+    func makeServiceCall(completion: NewsDomainCompletionHandler?) {
+        service.makeNetworkRequest { result in
+            switch result {
+            case .success(let newsDTO):
+                completion?(.success(newsDTO.toDomain()))
+            case .failure(let error):
+                completion?(.failure(error))
+            }
+        }
     }
     
     

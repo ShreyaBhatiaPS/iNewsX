@@ -7,8 +7,6 @@
 
 import Foundation
 
-//typealias News = [NewsData]
-
 struct NewsList: Codable, Equatable {
     var data: [NewsData] = []
 }

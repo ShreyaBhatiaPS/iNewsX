@@ -13,8 +13,14 @@ struct MockData {
                                                              date: "Thursday, 21st June, 2022",
                                                          imageUrl: "getimage.com")])
     
+    static let newsDTO: NewsDTO = NewsDTO(data: [NewsDataDTO(title: "Weather Update",
+                                                             content: "Heavy rainfall in some areas",
+                                                             date: "Thursday, 21st June, 2022",
+                                                         imageUrl: "getimage.com")])
+    
     static func encodedDictionary() -> Data {
         let encoded = try! JSONEncoder().encode(newsData)
         return encoded
     }
 }
+

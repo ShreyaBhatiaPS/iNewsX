@@ -15,7 +15,7 @@ class NewsUseCaseImp: INewsUseCase {
         self.repository = repository
     }
     
-    func getTheNews(callback: @escaping NewsCompletionHandler) {
+    func getTheNews(callback: @escaping NewsDomainCompletionHandler) {
         repository.makeServiceCall { result in
             callback(result)
         }

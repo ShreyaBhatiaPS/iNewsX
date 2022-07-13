@@ -16,7 +16,7 @@ class NewsServiceTest: XCTestCase {
     override func setUp() {
         super.setUp()
         mockNetwork = MockNetworkManager()
-        mockNetwork.newsData = MockData.newsData
+        mockNetwork.newsData = MockData.newsDTO
         newsService = NewsServiceImpl(network: mockNetwork)
     }
     

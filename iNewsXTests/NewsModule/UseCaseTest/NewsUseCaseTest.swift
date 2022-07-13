@@ -8,7 +8,7 @@
 import XCTest
 @testable import iNewsX
 
-final class NewsUseCaseTest: XCTestCase {
+class NewsUseCaseTest: XCTestCase {
     
     var mocRepository: MockNewsRepository!
     var useCase: NewsUseCaseImp?
@@ -29,7 +29,7 @@ final class NewsUseCaseTest: XCTestCase {
         useCase?.getTheNews(callback: { [weak self] result in
             switch result {
             case .success(let model):
-                XCTAssertEqual(model.data, self?.mocRepository.news?.data)
+                XCTAssertEqual(model.data, self?.mocRepository.news?.toDomain().data)
             case .failure(let error):
                 XCTFail(error.message)
             }

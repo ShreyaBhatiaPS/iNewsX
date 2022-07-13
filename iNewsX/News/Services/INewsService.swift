@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias NewsCompletionHandler = (Result<NewsDTO, BaseErrorClass>) -> ()
+
 protocol INewsService {
     func makeNetworkRequest(completion: NewsCompletionHandler?)
 }

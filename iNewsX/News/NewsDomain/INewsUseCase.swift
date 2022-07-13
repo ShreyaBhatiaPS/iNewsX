@@ -8,5 +8,5 @@
 import Foundation
 
 protocol INewsUseCase {
-    func getTheNews(callback: @escaping NewsCompletionHandler)
+    func getTheNews(callback: @escaping NewsDomainCompletionHandler)
 }

@@ -9,7 +9,7 @@ import Foundation
 
 class MockService: INewsService {
     
-    var newsData: NewsList?
+    var newsData: NewsDTO?
     var error: BaseErrorClass?
     
     func makeNetworkRequest(completion: NewsCompletionHandler?) {

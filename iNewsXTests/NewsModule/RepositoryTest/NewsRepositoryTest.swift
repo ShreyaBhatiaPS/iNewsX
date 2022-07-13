@@ -16,7 +16,7 @@ class NewsRepositoryTest: XCTestCase {
     override func setUp() {
         super.setUp()
         mockService = MockService()
-        mockService.newsData = MockData.newsData
+        mockService.newsData = MockData.newsDTO
         newsRepository = NewsRepositoryImpl(service: mockService)
     }
     
@@ -30,7 +30,8 @@ class NewsRepositoryTest: XCTestCase {
         newsRepository.makeServiceCall { [weak self] result in
             switch result {
             case .success(let model):
-                XCTAssertEqual(model.data, self?.mockService.newsData?.data)
+                
+                XCTAssertEqual(model.data, self?.mockService.newsData?.toDomain().data)
             case .failure(let error):
                 XCTFail(error.message)
             }
@@ -38,7 +39,6 @@ class NewsRepositoryTest: XCTestCase {
     }
     
     func testRepositoryFailure() {
-        
         mockService.newsData = nil
         newsRepository.makeServiceCall { result in
             switch result {

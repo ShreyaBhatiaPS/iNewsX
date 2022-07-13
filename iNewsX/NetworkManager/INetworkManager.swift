@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias TaskCompletionHandler<T> = (Result<T, BaseErrorClass>) -> ()
+
 protocol INetworkManager {
     func executeNetworkRequest<T: Codable>(_ type: T.Type, request: BaseRequest, completion: TaskCompletionHandler<T>?)
 }

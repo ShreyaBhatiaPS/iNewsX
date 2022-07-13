@@ -28,7 +28,7 @@ class NewsViewModalTest: XCTestCase {
     
     func testViewModelSuccess() {
         expectation = expectation(description: "Successfully launched the view model")
-        useCase.news = MockData.newsData
+        useCase.news = MockData.newsDTO
         newsViewModel?.fetchNews()
         wait(for: [expectation], timeout: 10.0)
     }

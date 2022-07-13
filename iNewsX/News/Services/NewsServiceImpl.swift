@@ -18,6 +18,6 @@ class NewsServiceImpl: INewsService {
     func makeNetworkRequest(completion: NewsCompletionHandler?){
         let urlString = EndPoint.newsUrl
         let request = BaseRequest(url: urlString, body: nil, method: .GET, header: nil)
-        network.executeNetworkRequest(NewsList.self, request: request, completion: completion)
+        network.executeNetworkRequest(NewsDTO.self, request: request, completion: completion)
     }
 }

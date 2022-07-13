@@ -9,7 +9,7 @@ import Foundation
 
 class MockNetworkManager: INetworkManager {
     
-    var newsData: NewsList?
+    var newsData: NewsDTO?
     var error: BaseErrorClass?
     
     func executeNetworkRequest<T>(_ type: T.Type, request: BaseRequest, completion: TaskCompletionHandler<T>?) where T : Decodable, T : Encodable {
