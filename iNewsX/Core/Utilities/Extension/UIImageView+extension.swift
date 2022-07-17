@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-let activityIndicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.medium)
 let cacheImage = NSCache<NSString, UIImage>()
 
 extension UIImageView {
@@ -21,15 +20,15 @@ extension UIImageView {
         self.image = nil
         
         // Add activity indicator
-        activityIndicator.center = self.center
-        self.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
+//        activityIndicator.center = self.center
+//        self.addSubview(activityIndicator)
+//        activityIndicator.startAnimating()
         
         // Check cached image
         if let imageFromCache = cacheImage.object(forKey: urlString as NSString) {
             self.image = imageFromCache
-            activityIndicator.stopAnimating()
-            activityIndicator.removeFromSuperview()
+//            activityIndicator.stopAnimating()
+//            activityIndicator.removeFromSuperview()
             return
         }
         
@@ -37,7 +36,7 @@ extension UIImageView {
             data, response, error in
             
             if error != nil {
-                print(StringConstant.imageURLError, error?.localizedDescription ?? "")
+                print(ErrorString.imageURLError.rawValue, error?.localizedDescription ?? "")
                 return
             }
             
@@ -46,8 +45,8 @@ extension UIImageView {
                     if let imageFromURL = UIImage(data: data) {
                         cacheImage.setObject(imageFromURL, forKey: urlString as NSString)
                         self?.image = imageFromURL
-                        activityIndicator.stopAnimating()
-                        activityIndicator.removeFromSuperview()
+//                        activityIndicator.stopAnimating()
+//                        activityIndicator.removeFromSuperview()
                     } else {
                         self?.image = UIImage()
                     }

@@ -47,7 +47,7 @@ class RestNetworkManager: NSObject, INetworkManager {
     private func createURLRequest(request: BaseRequest) throws -> URLRequest {
         
         guard let url = URL(string: request.url) else {
-            throw BaseErrorClass(message: StringConstant.urlFailure)
+            throw BaseErrorClass(message: ErrorString.urlFailure.rawValue)
         }
         var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
         urlRequest.httpMethod = request.method.rawValue

@@ -20,9 +20,11 @@ struct ViewControllerConstant {
 }
 
 struct StringConstant {
-    static let imageURLError = "Error while fetching image from url: "
     static let okButtonTitle = "OK"
-    static let dataNotFound = "Data not found"
-    static let statusCodeError = "Network error with status code:"
-    static let urlFailure = "Failed to get URL"
+}
+
+enum ErrorString: String {
+    case imageURLError = "Error while fetching image from url: "
+    case urlFailure = "Failed to get URL"
+    
 }
