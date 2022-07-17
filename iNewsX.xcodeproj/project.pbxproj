@@ -331,9 +331,9 @@
 		DE242836287564060064A625 /* NewsModule */ = {
 			isa = PBXGroup;
 			children = (
-				DE24283228755D5C0064A625 /* NewsModule.swift */,
-				DE24281F287536A30064A625 /* NewsDomain */,
+				DE8C547C28843FF9002429A8 /* Module */,
 				DE2428192875354B0064A625 /* NewsData */,
+				DE24281F287536A30064A625 /* NewsDomain */,
 				DE2427EE2873F4030064A625 /* Presentation */,
 			);
 			path = NewsModule;
@@ -462,6 +462,14 @@
 				DE242822287536E70064A625 /* NewsUseCaseImp.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		DE8C547C28843FF9002429A8 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				DE24283228755D5C0064A625 /* NewsModule.swift */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
