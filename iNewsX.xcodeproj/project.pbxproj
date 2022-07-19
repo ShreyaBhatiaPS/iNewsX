@@ -50,7 +50,6 @@
 		DE4D2DAA287E915800E20F5F /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DA9287E915800E20F5F /* MockURLProtocol.swift */; };
 		DE4D2DAC287EB89B00E20F5F /* DataNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DAB287EB89B00E20F5F /* DataNews.swift */; };
 		DE4D2DAE287EBDB000E20F5F /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4D2DAD287EBDB000E20F5F /* News.swift */; };
-		DE8C547B28843D5C002429A8 /* UIActivityIndicatorView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8C547A28843D5C002429A8 /* UIActivityIndicatorView+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +117,6 @@
 		DE4D2DA9287E915800E20F5F /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		DE4D2DAB287EB89B00E20F5F /* DataNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNews.swift; sourceTree = "<group>"; };
 		DE4D2DAD287EBDB000E20F5F /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
-		DE8C547A28843D5C002429A8 /* UIActivityIndicatorView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIActivityIndicatorView+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,7 +276,6 @@
 				DE2427F42873F83C0064A625 /* UIImageView+extension.swift */,
 				DE242828287552180064A625 /* UICollectionViewCell+extension.swift */,
 				DE2428372875658E0064A625 /* UIViewController+extension.swift */,
-				DE8C547A28843D5C002429A8 /* UIActivityIndicatorView+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -295,8 +292,7 @@
 		DE24281128747CBE0064A625 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				DE24281228747CD60064A625 /* INetworkManager.swift */,
-				DE24281628747CF40064A625 /* RestNetworkManager.swift */,
+				DE8C547D28852ACA002429A8 /* Network */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -312,9 +308,9 @@
 		DE2428192875354B0064A625 /* NewsData */ = {
 			isa = PBXGroup;
 			children = (
+				DE4D2DA8287E8FD000E20F5F /* Data */,
 				DE8C547828843B2C002429A8 /* Repository */,
 				DE4D2D9D287E767100E20F5F /* Services */,
-				DE4D2DA8287E8FD000E20F5F /* Data */,
 			);
 			path = NewsData;
 			sourceTree = "<group>";
@@ -322,8 +318,9 @@
 		DE24281F287536A30064A625 /* NewsDomain */ = {
 			isa = PBXGroup;
 			children = (
-				DE8C547928843B40002429A8 /* UseCase */,
 				DE4D2DAF287EC44B00E20F5F /* Entity */,
+				DE8C547928843B40002429A8 /* UseCase */,
+				DE8C547E28852B69002429A8 /* RepositoryInterface */,
 			);
 			path = NewsDomain;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 		DE8C547828843B2C002429A8 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				DE24281D287536460064A625 /* INewsRepository.swift */,
 				DE2428242875381B0064A625 /* NewsRepositoryImpl.swift */,
 			);
 			path = Repository;
@@ -470,6 +466,23 @@
 				DE24283228755D5C0064A625 /* NewsModule.swift */,
 			);
 			path = Module;
+			sourceTree = "<group>";
+		};
+		DE8C547D28852ACA002429A8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DE24281228747CD60064A625 /* INetworkManager.swift */,
+				DE24281628747CF40064A625 /* RestNetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DE8C547E28852B69002429A8 /* RepositoryInterface */ = {
+			isa = PBXGroup;
+			children = (
+				DE24281D287536460064A625 /* INewsRepository.swift */,
+			);
+			path = RepositoryInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -613,7 +626,6 @@
 				DE2427E32872B74D0064A625 /* NewsViewController.swift in Sources */,
 				DE2427E02872B6440064A625 /* DomainNews.swift in Sources */,
 				DE2427EB2872C07B0064A625 /* NewsCollectionViewCell.swift in Sources */,
-				DE8C547B28843D5C002429A8 /* UIActivityIndicatorView+extension.swift in Sources */,
 				DE24281E287536460064A625 /* INewsRepository.swift in Sources */,
 				DE4D2DA4287E7AE100E20F5F /* MockService.swift in Sources */,
 				DE2428382875658E0064A625 /* UIViewController+extension.swift in Sources */,

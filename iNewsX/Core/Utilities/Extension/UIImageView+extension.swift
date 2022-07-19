@@ -13,22 +13,15 @@ let cacheImage = NSCache<NSString, UIImage>()
 extension UIImageView {
     
     func downloadImage(from urlString: String) {
-//        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFit
         guard let imageUrl = URL(string: urlString) else {
             return
         }
         self.image = nil
         
-        // Add activity indicator
-//        activityIndicator.center = self.center
-//        self.addSubview(activityIndicator)
-//        activityIndicator.startAnimating()
-        
         // Check cached image
         if let imageFromCache = cacheImage.object(forKey: urlString as NSString) {
             self.image = imageFromCache
-//            activityIndicator.stopAnimating()
-//            activityIndicator.removeFromSuperview()
             return
         }
         
@@ -45,8 +38,6 @@ extension UIImageView {
                     if let imageFromURL = UIImage(data: data) {
                         cacheImage.setObject(imageFromURL, forKey: urlString as NSString)
                         self?.image = imageFromURL
-//                        activityIndicator.stopAnimating()
-//                        activityIndicator.removeFromSuperview()
                     } else {
                         self?.image = UIImage()
                     }

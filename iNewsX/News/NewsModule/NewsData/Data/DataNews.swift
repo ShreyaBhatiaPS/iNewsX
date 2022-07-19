@@ -7,6 +7,9 @@
 
 import Foundation
 
+// MARK: - Data Transfer Object (DTO)
+// It is used as intermediate object to encode/decode JSON response into domain, inside DataLayer
+
 struct NewsDTO: Codable, Equatable {
     var data: [NewsDataDTO]
 }
@@ -16,7 +19,7 @@ struct NewsDataDTO: Codable, Equatable {
 }
 
 
-// Mapping Data
+// Mapping Data to Domain
 
 extension NewsDTO {
     
