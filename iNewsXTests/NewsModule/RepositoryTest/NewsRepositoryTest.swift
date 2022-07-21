@@ -30,7 +30,6 @@ class NewsRepositoryTest: XCTestCase {
         newsRepository.makeServiceCall { [weak self] result in
             switch result {
             case .success(let model):
-                
                 XCTAssertEqual(model.data, self?.mockService.newsData?.toDomain().data)
             case .failure(let error):
                 XCTFail(error.message)
