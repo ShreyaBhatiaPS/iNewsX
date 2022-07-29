@@ -8,11 +8,6 @@
 import Foundation
 
 struct MockData {
-    static let newsData: DomainNewsList = DomainNewsList(data: [DomainNewsData(title: "Weather Update",
-                                                             content: "Heavy rainfall in some areas",
-                                                             date: "Thursday, 21st June, 2022",
-                                                         imageUrl: "getimage.com")])
-    
     static let newsDTO: NewsDTO = NewsDTO(data: [NewsDataDTO(title: "Weather Update",
                                                              content: "Heavy rainfall in some areas",
                                                              date: "Thursday, 21st June, 2022",

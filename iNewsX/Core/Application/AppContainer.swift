@@ -13,7 +13,8 @@ class AppContainer {
     func initializeApplication(on window: UIWindow?) {
         let newsModule = NewsModule()
         let viewController = newsModule.callToNewsViewController()
-        window?.rootViewController = viewController
+        let navigationVC = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()
     }
 }
